@@ -633,7 +633,7 @@ class edi_route(models.Model):
                 'model': self._name,
                 'type': 'notification',})
     
-    @api.v7
+    # @api.v7
     def cron_job(self, cr, uid, context=None):
         for route in self.pool.get('edi.route').browse(cr, uid, self.pool.get('edi.route').search(cr, uid, [('active','=',True)])):
             if not route.next_run:
